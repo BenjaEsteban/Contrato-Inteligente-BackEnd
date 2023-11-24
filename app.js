@@ -4,18 +4,14 @@ const cors = require('cors')
 
 const app = express()
 
-
-try {
-      DBConexion()
-      console.log('Conexion exitosa')
-} catch (error) {
-      console.alert(error)
-}
+DBConexion()
 
 app.use(cors())
 
 app.use(express.json())
 
-app.listen(8080, () => {
-      console.log('Servidor corriendo en el puerto 8080')
+app.use('/usuario', require('./routes/usuario.routes.js'));
+
+app.listen(8020, () => {
+      console.log('Servidor corriendo en el puerto 8080...')
 })
