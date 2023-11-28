@@ -15,9 +15,7 @@ exports.crearUsuario = async (req, res) => {
 }
 
 exports.obtenerUsuario = async (req, res) => {
-
     try {
-
         const usuario = await Usuario.find();
         res.json(usuario);
 
@@ -25,11 +23,9 @@ exports.obtenerUsuario = async (req, res) => {
         console.log(error);
         res.status(500).send('Hubo un error');
     }
-
 }
 
 exports.obtenerUnUsuario = async (req, res) => {
-
       try {
           let usuario = await Usuario.findById(req.params.id);
   
