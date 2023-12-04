@@ -20,14 +20,12 @@ const UsuarioSchema = new mongoose.Schema({
   },
   imagen: {
     type: String,
-    default: "http://imagen.com",
+    default: "https://lapi.com.mx/web/image/product.template/4986/image_1024?unique=d881c02",
   },
-  contratos: [
-    {
-      ref: "Contrato",
-      type: mongoose.Schema.Types.ObjectId,
-    }
-  ]
+  email: {
+    type: String,
+    required: true,
+  }
 });
 
 UsuarioSchema.statics.comparePassword = async (password, receivedPassword) => {
